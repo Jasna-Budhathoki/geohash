@@ -3,5 +3,11 @@
 /.pytest_cache
 /__pycache__
 */.DS_Store
+app.py
+geohash-test.py
+geoHash.py
+main.py
+nep_dat.py
+osm_retrieval.py
 
 
