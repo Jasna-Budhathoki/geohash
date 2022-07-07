@@ -9,5 +9,15 @@ geoHash.py
 main.py
 nep_dat.py
 osm_retrieval.py
+encoder_shortened.py
+admin_hash.py
+/NEPAL_GAPANAPA_WARDS
+geocode_reverse.py
+geoHash.py
+geohash-test.py
+/pokhara-ward.geojson
+
+
+
 
 
