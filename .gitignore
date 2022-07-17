@@ -5,7 +5,6 @@
 */.DS_Store
 app.py
 geohash-test.py
-geoHash.py
 main.py
 nep_dat.py
 osm_retrieval.py
@@ -16,13 +15,19 @@ geocode_reverse.py
 geoHash.py
 geohash-test.py
 /pokhara-ward.geojson
-Geohash_Encoder_v1.py
 books.db
 api.py
 decoder_test.log
 encoder_test.log 
 test.log
 test.py
+Geohash_Encoder_v1.py
+geoHash.py
+test_geohash_encoder.py
+Geohash_Encoder_v1.py
+
+
+
 
 
 
