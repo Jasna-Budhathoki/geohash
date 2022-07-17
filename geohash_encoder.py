@@ -1,16 +1,26 @@
-#Jasna Budhathoki
-#Geohash - encoder
-#Program that converts lat,long to geohash 
-#July 3, 2022
+#Geohash Encoder
 
 from geohash_encoder_turf import *
+
+import logging 
+
+logging.basicConfig(filename = "encoder_test.log", level = logging.DEBUG, format = '%(message)s')
 
 base_32 = "0123456789bcdefghjkmnpqrstuvwxyz"
 base_dict = {}
 for i in range(len(base_32)):
     base_dict[base_32[i]] = i
 
+
 def choose_interval(interval_1, interval_2, coordinate, interval):
+    '''takes two intervals interval_1 and interval_2, either latitude/longitude coordinate and interval and returns the new interval_1 and interval_2 along with a string interval
+    Input : interval_1 : a tuple with floats, 
+            interval_2 : a tuple with floats, 
+            interval : string, 
+            coordinate : float
+    Output : interval_1 : a tuple with floats,
+             interval_2 : a tuple with floats,  
+             interval : string '''
     if (coordinate > interval_1[0]) and (coordinate < interval_1[1]):
         interval += "0"
         mid_interval = (interval_1[0] + interval_1[1]) / 2
@@ -26,6 +36,11 @@ def choose_interval(interval_1, interval_2, coordinate, interval):
     return interval,interval_1,interval_2
 
 def encode(lat, lon):
+    '''takes two floats latitude and longitude and returns a string with the name of the city and the ward number the point belongs to
+    Input: Latitude: float, Longitude: float
+    Output: Geohash: string'''
+
+    logging.debug("Latitude is {}, Longitude is {}".format(lat,lon))
     interval_lat = ""
     interval_lon = ""
 
@@ -61,12 +76,6 @@ def encode(lat, lon):
     admin_info = ward_info(lat,lon)
     final_geohash = ""
     final_geohash = admin_info[0]+ admin_info[1] + "-" + geohash[-3:]
-    print ("The ward level geohash is",final_geohash)
-    print("The 8 digit geohash is",geohash)
+    logging.debug (final_geohash)
+    logging.debug(geohash)
     return geohash
-
-encode(28.1472,84.0823) #Pokhara University ward 30 
-encode(28.1739,84.0973) #Begnas Lake ward 31
-encode(28.2067,83.9816) #Phewa City hospital ward 8
-encode(28.2118,83.9814) #Metro City hospital ward 8
-encode(28.2180345,83.9794506) #random point 
