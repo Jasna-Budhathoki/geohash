@@ -90,9 +90,3 @@ def encode(lat, lon):
     print("The 8 digit geohash is",geohash)
     return geohash
 
-encode(28.1472,84.0823) #Pokhara University ward 30 
-encode(28.1739,84.0973) #Begnas Lake ward 31
-encode(28.2067,83.9816) #Phewa City hospital ward 8
-encode(28.2118,83.9814) #Metro City hospital ward 8
-encode(28.2180345,83.9794506) #random point 
-
