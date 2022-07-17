@@ -14,7 +14,6 @@ admin_hash.py
 geocode_reverse.py
 geoHash.py
 geohash-test.py
-/pokhara-ward.geojson
 books.db
 api.py
 decoder_test.log
