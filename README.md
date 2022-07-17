@@ -13,15 +13,16 @@ Geohash Encoder coverts a tuple of latitude and longitude to its corresponding g
 
 An example of how the geohash encoder system works here is as follows:
 
-![This is an image](https://github.com/Jasna-Budhathoki/geohash/blob/main/ss_1.png)
+```console
+>>>encode(28.1472,84.0823)
+'tv5b1k4c'
+```
 
 ### Geohash Decoder
 
 A geohash decoder converts a geohash into its corresponding tuple of latitude and longitude. 
 
 An example of how the geohash decoder system works here is as follows:
-
-![This is an image](https://github.com/Jasna-Budhathoki/geohash/blob/main/ss_2.png)
 
 ###Instructions on using the API 
 
