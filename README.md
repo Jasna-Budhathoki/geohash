@@ -1,14 +1,15 @@
 # Geohash Encoder and Decoder 
-
-This is a Geohash encoder program that encodes a given latitude and longitude to its corresponding geohash. For any given location on earth, Geohash encoder converts the latitude and longitude into a unique string.
+This projects contains a geohash encoder and a geohash decoder. Learn more about Geohash below! 
 
 ## What is Geohash
 
 A geohash is a convenient way of expressing a location using a short alphanumeric string. As the geohash strings gets longer, the location can be obtained with greater precision. 
 
+For example, a point with latitude 48.669 and longitude 45.56116 can be converted to a geohash of 'v08kugbt' when expressed in an 8 digits precision. 
+
 ### Geohash Encoder
 
-Geohash Encoder coverts a tuple of latitude and longitude to its corresponding geohash. 
+Geohash Encoder coverts a tuple of latitude and longitude to its corresponding geohash. This program converts a given latitude and longitude to an 8 characters long geohash, which has an error rate of ±19 meters. 
 
 An example of how the geohash encoder system works here is as follows:
 
@@ -21,6 +22,12 @@ A geohash decoder converts a geohash into its corresponding tuple of latitude an
 An example of how the geohash decoder system works here is as follows:
 
 ![This is an image](https://github.com/Jasna-Budhathoki/geohash/blob/main/ss_2.png)
+
+###Instructions on using the API 
+
+
+
+
 
 
 
