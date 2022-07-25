@@ -22,9 +22,14 @@ An example of how the geohash encoder system works here is as follows:
 
 A geohash decoder converts a geohash into its corresponding tuple of latitude and longitude. 
 
-An example of how the geohash decoder system works here is as follows:
+An example of how the geohash encoder system works here is as follows:
 
-###Instructions on using the API 
+```console
+tv5b38vu
+{'latitude': 28.173837661743164, 'longitude': 84.0974235534668}
+```
+
+
 
 
 
