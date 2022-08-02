@@ -14,6 +14,7 @@ admin_hash.py
 geocode_reverse.py
 geoHash.py
 geohash-test.py
+books.db
 api.py
 decoder_test.log
 encoder_test.log 
@@ -23,14 +24,8 @@ Geohash_Encoder_v1.py
 geoHash.py
 test_geohash_encoder.py
 Geohash_Encoder_v1.py
-/docs/animals.yml
-app.py
-ss_1.png
-ss_2.png
-decoder_test.log
-encoder_test.log
 
-
+/myenv
 
 
 
