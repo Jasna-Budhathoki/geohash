@@ -82,4 +82,4 @@ def api_geohash_encoder():
             return jsonify({"status": 400, "message": "Please provide latitude and longitude in the correct format"})  #handle 404 error - server cannot find the requested source 
 
 if __name__ == "__main__":
-    app.run(debug=True, port=8000)
+    app.run(debug=True, port=80)
