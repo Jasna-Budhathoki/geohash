@@ -1,0 +1,21 @@
+Endpoint returning a tuple of floating points latitude and longitude corresponding to the 8 characters long geohash
+  ---
+parameters:
+  - name: geohash
+    in: query
+    type: string
+    required: true
+    description: an 8 characters long geohash of a point of location 
+
+responses:
+    200:
+      description: A tuple of latitude and longitude 
+      examples:
+        "latitude": 28.211774826049805
+        "longitude": 83.98138046264648
+
+
+
+
+
+
