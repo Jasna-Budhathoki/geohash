@@ -1,2 +1,2 @@
-web: gunicorn geohash-api:app
+web: gunicorn geohash_api:app
 
