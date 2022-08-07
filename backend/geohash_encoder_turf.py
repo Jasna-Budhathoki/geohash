@@ -1,5 +1,4 @@
 #Geohash_encoder using ward boundaries 
-
 from turfpy.measurement import boolean_point_in_polygon
 from geojson import Point, Feature
 import os

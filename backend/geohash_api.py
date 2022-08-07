@@ -3,9 +3,12 @@ from flask import request, jsonify, make_response
 from geohash_decoder import decode
 from geohash_encoder import encode
 from flasgger import Swagger, swag_from
+from baato import BaatoClient #
 
 app = flask.Flask(__name__)
 app.config["DEBUG"] = True
+
+client = BaatoClient(access_token="bpk.05j39KLSi-P80QvtSUdrMYpwuIqsgjTYlMuWtcvZ9UDZ")
 
 template = {
     "swagger":"2.0",
@@ -77,7 +80,10 @@ def api_geohash_encoder():
             latitude = float(request.args['latitude'])
             longitude = float(request.args['longitude'])
             geohash = encode(latitude, longitude)
-            return jsonify({"status": 200, "message": "success", "data": geohash})
+            response = client.reverse(lat=latitude,lon=longitude) #
+            data_1 = response["data"] #
+            status_1 = response["status"] #
+            return jsonify({"status": 200, "message": "success", "data": geohash, "data_1":data_1, "status_1":status_1}) #
         except:
             return jsonify({"status": 400, "message": "Please provide latitude and longitude in the correct format"})  #handle 404 error - server cannot find the requested source 
 

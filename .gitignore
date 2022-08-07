@@ -1,9 +1,9 @@
 /myenv/*
 /cache
 /.pytest_cache
-/__pycache__
-*/.DS_Store
+.DS_Store
 app.py
+**/__pycache__**
 geohash-test.py
 main.py
 nep_dat.py
@@ -22,11 +22,9 @@ test.log
 test.py
 Geohash_Encoder_v1.py
 geoHash.py
-test_geohash_encoder.py
 Geohash_Encoder_v1.py
 books.db
 /venv
-
 
 
 
