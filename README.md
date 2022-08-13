@@ -14,7 +14,7 @@ Geohash Encoder coverts a tuple of latitude and longitude to its corresponding g
 An example of how the geohash encoder system works here is as follows:
 
 ```console
->>>encode(28.1472,84.0823)
+encode(28.1472,84.0823)
 'tv5b1k4c'
 ```
 
