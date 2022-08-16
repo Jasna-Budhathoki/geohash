@@ -14,9 +14,14 @@ admin_geohash = []
 
 
 def ward_info(lat, long):
-    """Takes latitude and longitude coordinates and returns the name of the city and ward number if the point is within the boundary of the city
-    Input: latitude : float, longitude : float
-    Output: Returns the name of the city and the ward number the point is located in"""
+    """
+        Takes latitude and longitude coordinates and returns the name of the city and ward number
+        if the point is within the boundary of the city
+
+            Input: latitude : float, longitude : float
+            Output: Returns the name of the city and the ward number the point is located in
+
+    """
     location_point = Feature(geometry=Point([long, lat]))  # long,lat
     in_pokhara = False
     for i in range(len(features)):
@@ -29,6 +34,6 @@ def ward_info(lat, long):
             admin_geohash.append(name.rpartition(" ")[-1])
             in_pokhara = True
             return admin_geohash
-    if in_pokhara == False:
+    if not in_pokhara:
         print("The point with lat %f and %f is not in Pokhara " % (lat, long))
         return -1

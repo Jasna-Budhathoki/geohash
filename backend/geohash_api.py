@@ -1,9 +1,10 @@
 import flask
 from flask import request, jsonify, make_response
-from geohash_decoder import decode
-from geohash_encoder import encode
 from flasgger import Swagger, swag_from
 from baato import BaatoClient  #
+
+from backend.geohash_decoder import decode
+from backend.geohash_encoder import encode
 
 app = flask.Flask(__name__)
 app.config["DEBUG"] = True
@@ -38,9 +39,10 @@ def home():
 # status code error 404
 
 
-@app.errorhandler(404)  # handle 404 error - server cannot find the requested source
+@app.errorhandler(404)
 def handle_404_error(_error):
-    return make_response(jsonify({"error": f"Not found"}), 404)
+    """handle 404 error - server cannot find the requested source"""
+    return make_response(jsonify({"error": "Not found"}), 404)
 
 
 # status code error 400
@@ -79,7 +81,7 @@ def api_geohash_encoder():
 
     latitude = query_parameters.get("latitude")
     longitude = query_parameters.get("longitude")
-    if latitude == None or longitude == None:
+    if not latitude or not longitude:
         return {
             "status": 400,
             "message": "Either latitude or longitude data is missing",
@@ -102,7 +104,7 @@ def api_geohash_encoder():
                     "status_1": status_1,
                 }
             )  #
-        except:
+        except Exception:
             return jsonify(
                 {
                     "status": 400,

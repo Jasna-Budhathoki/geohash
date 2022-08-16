@@ -1,5 +1,5 @@
 # Geohash Encoder
-from geohash_encoder_turf import *
+from backend.geohash_encoder_turf import ward_info
 
 import logging
 
@@ -14,14 +14,19 @@ for i in range(len(base_32)):
 
 
 def choose_interval(interval_1, interval_2, coordinate, interval):
-    """takes two intervals interval_1 and interval_2, either latitude/longitude coordinate and interval and returns the new interval_1 and interval_2 along with a string interval
-    Input : interval_1 : a tuple with floats,
-            interval_2 : a tuple with floats,
-            interval : string,
-            coordinate : float
-    Output : interval_1 : a tuple with floats,
-             interval_2 : a tuple with floats,
-             interval : string"""
+    """
+    Takes two intervals interval_1 and interval_2, either latitude/longitude coordinate and
+    interval and returns the new interval_1 and interval_2 along with a string interval
+
+        Input : interval_1 : a tuple with floats,
+                interval_2 : a tuple with floats,
+                interval : string,
+                coordinate : float
+        Output : interval_1 : a tuple with floats,
+                interval_2 : a tuple with floats,
+                interval : string
+
+    """
     if (coordinate > interval_1[0]) and (coordinate < interval_1[1]):
         interval += "0"
         mid_interval = (interval_1[0] + interval_1[1]) / 2
@@ -38,9 +43,14 @@ def choose_interval(interval_1, interval_2, coordinate, interval):
 
 
 def encode(lat, lon):
-    """takes two floats latitude and longitude and returns a string with the name of the city and the ward number the point belongs to
-    Input: Latitude: float, Longitude: float
-    Output: Geohash: string"""
+    """
+        Takes two floats latitude and longitude and returns a string with the name of the city and
+        the ward number the point belongs to
+
+            Input: Latitude: float, Longitude: float
+            Output: Geohash: string
+
+    """
 
     logging.debug("Latitude is {}, Longitude is {}".format(lat, lon))
     interval_lat = ""
@@ -66,7 +76,7 @@ def encode(lat, lon):
 
     str = "".join(map("".join, zip(interval_lon, interval_lat)))  # kudos @Coldspeed
     n = 5
-    chunks = [str[i : i + n] for i in range(0, len(str), n)]
+    chunks = [str[i: i + n] for i in range(0, len(str), n)]
     key_list = list(base_dict.keys())
     val_list = list(base_dict.values())
 
@@ -79,7 +89,7 @@ def encode(lat, lon):
     final_geohash = ""
     try:
         final_geohash = admin_info[0] + admin_info[1] + "-" + geohash[-3:]
-    except:
+    except Exception:
         return geohash
     logging.debug(final_geohash)
     logging.debug(geohash)
