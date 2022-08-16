@@ -1,0 +1,19 @@
+Endpoint returning an 8 characters long geohash for a corresponding latitude and longitude pair. 
+    ---
+parameters:
+    - name: latitude
+      in: query
+      type: number
+      required: true
+      description: a float latitude
+    
+    - name: longitude
+      in: query
+      type: number
+      required: true 
+      description: a float longitude 
+responses:
+    200:
+        description: An 8 characters long string - geohash 
+        examples: "tv5b1k4c"
+

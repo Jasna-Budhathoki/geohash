@@ -1,5 +1,4 @@
 #Geohash Encoder
-
 from geohash_encoder_turf import *
 
 import logging 
@@ -75,7 +74,10 @@ def encode(lat, lon):
         geohash = geohash + key_list[position]
     admin_info = ward_info(lat,lon)
     final_geohash = ""
-    final_geohash = admin_info[0]+ admin_info[1] + "-" + geohash[-3:]
+    try: 
+        final_geohash = admin_info[0]+ admin_info[1] + "-" + geohash[-3:]
+    except:
+        return geohash
     logging.debug (final_geohash)
     logging.debug(geohash)
     return geohash

@@ -1,4 +1,4 @@
-from geohash_encoder import encode
+from backend.geohash_encoder import encode
 
 def test_encode_1():
     """geohash encode converts latitude of 27.7340 and longitude of 85.3368 to 'tuutvbu6'. """
