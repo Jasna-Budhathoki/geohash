@@ -29,9 +29,6 @@ tv5b38vu
 {'latitude': 28.173837661743164, 'longitude': 84.0974235534668}
 ```
 
-### API Docs 
-
-Here is a link to the API docs for geohash encoder decoder: https://geohash-api.herokuapp.com/apidocs/#/default/get_encoder
 
 
 
